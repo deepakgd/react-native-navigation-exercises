@@ -3,7 +3,7 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Settings from './app/Settings';  //Tab Nav
 import Profile from './app/Profile'; //Stack Nav
-import Users from './app/Users'; //component
+import Users from './app/Users'; //Tab Nav
 import { createAppContainer } from 'react-navigation';
 
 const drawerNavigator = createDrawerNavigator({
