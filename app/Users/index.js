@@ -1,10 +1,8 @@
 import React from 'react';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
-import Styles from '../styles';
 
 import A from './A';
 import B from './B';
@@ -38,4 +36,12 @@ const tabs = createBottomTabNavigator({
     }
 })
 
-export default createStackNavigator({ tabs }, {  headerMode: 'none'})
+export default createStackNavigator({ tabs }, { headerMode: "none" })
+
+
+// import { createStackNavigator } from 'react-navigation-stack';
+// import Home from './A';
+
+// export default createStackNavigator({
+//     Home
+// });
