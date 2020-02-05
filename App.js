@@ -1,78 +1,33 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from 'react'
+import { createDrawerNavigator } from 'react-navigation-drawer';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Settings from './app/Settings';  //Tab Nav
+import Profile from './app/Profile'; //Stack Nav
+import Users from './app/Users'; //component
+import { createAppContainer } from 'react-navigation';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  Button
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-import AppNavigation from './app/Navigation/AppNavigation'
-
-const App: () => React$Node = () => {
-  return (
-    <React.Fragment>
-          <Text>Welcome</Text>
-          <AppNavigation />
-    </ React.Fragment>
-  );
-};
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+const drawerNavigator = createDrawerNavigator({
+  Settings: {
+    screen: Settings,
+    navigationOptions: {
+      drawerLabel: 'Settings',
+      drawerIcon: ({ tintColor }) => <Icon name="cog" size={17} />,
+    }
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      drawerLabel: 'Profile',
+      drawerIcon: ({ tintColor }) => <Icon name="user-circle" size={17} />,
+    }
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  Users: {
+    screen: Users,
+    navigationOptions: {
+      drawerLabel: 'Users',
+      drawerIcon: ({ tintColor }) => <Icon name="address-card" size={17} />,
+    }
+  }
 });
 
-export default App;
+export default createAppContainer(drawerNavigator);
