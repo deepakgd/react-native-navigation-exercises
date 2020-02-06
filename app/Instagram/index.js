@@ -6,6 +6,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import Home from './Home';
 import Search from './Search';
+import CreatePost from './Create';
+import Notification from './Notification';
+import Profile from './Profile';
 
 const tabs = createBottomTabNavigator({
     Home: {
@@ -23,6 +26,33 @@ const tabs = createBottomTabNavigator({
             title: 'Search',
             tabBarIcon: ({ tintColor }) => (
                 <Icon name="search" size={17} color={tintColor} />
+            )
+        }
+    },
+    Create: {
+        screen: CreatePost,
+        navigationOptions: {
+            title: 'Create Post',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="plus-square" size={17} color={tintColor} />
+            )
+        }
+    },
+    Notification: {
+        screen: Notification,
+        navigationOptions: {
+            title: 'Notification',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="bell" size={17} color={tintColor} />
+            )
+        }
+    },
+    Profile: {
+        screen: Profile,
+        navigationOptions: {
+            title: 'Notification',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="user" size={17} color={tintColor} />
             )
         }
     }
